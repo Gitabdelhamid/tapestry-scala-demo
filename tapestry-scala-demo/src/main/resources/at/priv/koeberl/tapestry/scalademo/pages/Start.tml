@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter">
+	<body>
+		<section id="current-orders">
+			<div class="page-header">
+				<h1>Tapestry Scala Demo</h1>
+			</div>
+			<div class="row">
+				<div class="span8">
+					<h2>Jaja, Scala und Tapestry</h2>
+					<p>Das ist eine Testseite</p>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Tapestry Scala - ${pageTitle}</title>
+</head>
+
+<body>
+	<div class="topbar">
+		<div class="topbar-inner">
+			<div class="container">
+				<a t:type="pagelink" page="Start" class="brand" href="#">OrderIT</a>
+
+				<ul id="nav">
+					<li class="active"><a t:type="pagelink" page="Start" href="#">${message:Start.pageTitle}</a></li>
+					<li><a href="#">Infos</a>
+					</li>
+				</ul>
+				<div class="pull-right">
+					Test-Login
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<header id="overview" style="padding-top: 40px">
+		<div class="inner">
+			<div class="container">
+				<h1>${pageTitle}</h1>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<t:body />
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<p class="pull-right">
+				(c) 2011, Christian Köberl
+			</p>
+			<address id="about" class="vcard body">
+				<span class="primary"><strong><a href="http://porscheinformatik.com/" class="fn url">Porsche Informatik</a></strong>
+				<br/>
+				<span class="role">Automotive Software</span> </span>
+			</address>
+		</div>
+	</footer>
+
+</body>
+</html>

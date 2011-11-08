@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter">
+	<body>
+		<section id="person-edit">
+			<h1>Edit/Create Person</h1>
+			<div class="row">
+				<div class="span8">
+					<t:form>
+						<t:beaneditor object="person" />
+						<t:submit class="btn primary" />
+					</t:form>
+				</div>
+			</div>
+		</section>
+		<section id="person-list">
+			<h2>Person list</h2>
+			<table t:type="grid" source="personList" row="currentPerson">
+			</table>
+		</section>
+	</body>
+</html>
+
