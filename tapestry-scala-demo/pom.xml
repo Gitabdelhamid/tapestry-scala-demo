@@ -29,17 +29,6 @@
 			<artifactId>tapestry-core</artifactId>
 			<version>${tapestry.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.tapestry</groupId>
-			<artifactId>tapestry-jpa</artifactId>
-			<version>${tapestry.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>javax.persistence</artifactId>
-					<groupId>org.eclipse.persistence</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 	</dependencies>
 	<build>
 		<sourceDirectory>src/main/scala</sourceDirectory>
