@@ -1,5 +1,5 @@
-h1 Tapestry Scala Demo
+h1. Tapestry Scala Demo
 
 This is a small application that demonstrates the usage of Tapestry with the Scala programming language.
 
-To run the app get Maven and run: mvn package jetty:run
+To run the app get Maven and run: <code>mvn package jetty:run</code>
