@@ -15,10 +15,10 @@ class PersonService(
   @PersistenceContext
   var em: EntityManager = null) {
 
-  @CommitAfter
+  @CommitAfter // TODO does not work - check why
   def add(p: Person) = em.persist(p)
 
-  @CommitAfter
+  @CommitAfter // TODO does not work - check why
   def delete(p: Person) = em.remove(p)
 
   def listAll() = em.createQuery("FROM Person", classOf[Person]).getResultList()

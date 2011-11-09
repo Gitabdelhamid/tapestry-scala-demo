@@ -47,6 +47,7 @@ object AppModule {
 	      classOf[GridDataSource], new ScalaCollectionGridDataSourceCoercion))
   }
 
+  // TODO check why advising PersonService does not work
   @Match(Array("PersonService"))
   def adviseTransactionally(advisor: JpaTransactionAdvisor, receiver: MethodAdviceReceiver) {
     advisor.addTransactionCommitAdvice(receiver);

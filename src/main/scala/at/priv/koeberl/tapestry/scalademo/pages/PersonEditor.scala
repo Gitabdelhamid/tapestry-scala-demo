@@ -20,7 +20,7 @@ class PersonEditor {
     person = new Person()
   }
 
-  @CommitAfter
+  @CommitAfter // TODO remove when PersonService works with @CommitAfter
   def onSuccess() {
     personService.add(person)
   }
