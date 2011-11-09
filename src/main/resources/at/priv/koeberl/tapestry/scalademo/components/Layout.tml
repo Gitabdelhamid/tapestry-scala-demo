@@ -10,12 +10,11 @@
 	<div class="topbar">
 		<div class="topbar-inner">
 			<div class="container">
-				<a t:type="pagelink" page="Start" class="brand" href="#">OrderIT</a>
+				<a t:type="pagelink" page="Start" class="brand" href="#">Tapestry Scala Demo</a>
 
 				<ul id="nav">
 					<li class="active"><a t:type="pagelink" page="Start" href="#">${message:Start.pageTitle}</a></li>
-					<li><a href="#">Infos</a>
-					</li>
+					<li><a t:type="pagelink" page="PersonEditor" href="#">${message:PersonEditor.pageTitle}</a></li>
 				</ul>
 				<div class="pull-right">
 					Test-Login

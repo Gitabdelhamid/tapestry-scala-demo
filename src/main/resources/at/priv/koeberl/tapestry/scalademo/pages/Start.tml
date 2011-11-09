@@ -4,12 +4,12 @@
 	<body>
 		<section id="current-orders">
 			<div class="page-header">
-				<h1>Tapestry Scala Demo</h1>
+				<h2>Tapestry Scala Demo</h2>
 			</div>
 			<div class="row">
 				<div class="span8">
-					<h2>Jaja, Scala und Tapestry</h2>
-					<p>Das ist eine Testseite</p>
+					<h3>Yea, Scala and Tapestry</h3>
+					<p>This is the start page</p>
 				</div>
 			</div>
 		</section>
