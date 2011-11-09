@@ -7,7 +7,7 @@
 			<div class="row">
 				<div class="span8">
 					<t:form>
-						<t:beaneditor object="person" />
+						<t:beaneditor object="person" exclude="id" />
 						<t:submit class="btn primary" />
 					</t:form>
 				</div>

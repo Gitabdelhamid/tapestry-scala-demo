@@ -2,7 +2,8 @@ package at.priv.koeberl.tapestry.scalademo.pages
 
 import at.priv.koeberl.tapestry.scalademo.services.PersonService
 import org.apache.tapestry5.ioc.annotations.Inject
-import at.priv.koeberl.tapestry.scalademo.services.Person
+import at.priv.koeberl.tapestry.scalademo.entities.Person
+import org.apache.tapestry5.jpa.annotations.CommitAfter
 
 class PersonEditor {
 
@@ -19,6 +20,7 @@ class PersonEditor {
     person = new Person()
   }
 
+  @CommitAfter
   def onSuccess() {
     personService.add(person)
   }

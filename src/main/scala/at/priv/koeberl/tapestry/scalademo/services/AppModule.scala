@@ -16,6 +16,9 @@ import org.apache.tapestry5.grid.GridDataSource
 import scala.collection.immutable.List
 import org.apache.tapestry5.internal.grid.CollectionGridDataSource
 import scala.collection.JavaConverters._
+import org.apache.tapestry5.SymbolConstants
+import org.apache.tapestry5.jpa.JpaTransactionAdvisor
+import org.apache.tapestry5.ioc.annotations.Match
 
 object AppModule {
   
@@ -24,7 +27,8 @@ object AppModule {
   }
   
   def contributeApplicationDefaults(configuration : MappedConfiguration[String, Object]) {
-    
+    configuration.add(SymbolConstants.DEFAULT_STYLESHEET, "classpath:/at/priv/koeberl/tapestry/scalademo/style/tapestry.css")
+    configuration.add(SymbolConstants.PRODUCTION_MODE, Boolean.box(false))
   }
 
   def contributeJavaScriptStackSource(configuration: MappedConfiguration[String, JavaScriptStack]) {
@@ -42,6 +46,11 @@ object AppModule {
 	  configuration.add(new CoercionTuple(classOf[Seq[AnyRef]], 
 	      classOf[GridDataSource], new ScalaCollectionGridDataSourceCoercion))
   }
+
+  @Match(Array("PersonService"))
+  def adviseTransactionally(advisor: JpaTransactionAdvisor, receiver: MethodAdviceReceiver) {
+    advisor.addTransactionCommitAdvice(receiver);
+  }
 }
 
 class BootstrapStack(assetSource: AssetSource, @Symbol(PRODUCTION_MODE) productionMode: Boolean) extends JavaScriptStack {
@@ -50,7 +59,7 @@ class BootstrapStack(assetSource: AssetSource, @Symbol(PRODUCTION_MODE) producti
   def getJavaScriptLibraries = Collections.emptyList()
   def getStylesheets = {
     val css = if (productionMode) "classpath:/at/priv/koeberl/tapestry/scalademo/style/bootstrap.min.css"
-    else "classpath:/at/priv/koeberl/tapestry/scalademo/style/bootstrap.css"
+    		  else "classpath:/at/priv/koeberl/tapestry/scalademo/style/bootstrap.css"
     Arrays.asList(new StylesheetLink(assetSource.getUnlocalizedAsset(css)))
   }
 }
@@ -58,4 +67,3 @@ class BootstrapStack(assetSource: AssetSource, @Symbol(PRODUCTION_MODE) producti
 class ScalaCollectionGridDataSourceCoercion extends Coercion[Seq[AnyRef], GridDataSource] {
   def coerce(list : Seq[AnyRef]) = new CollectionGridDataSource(list.asJava)
 }
-
