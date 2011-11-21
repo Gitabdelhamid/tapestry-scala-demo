@@ -23,9 +23,9 @@ import org.apache.tapestry5.ioc.annotations.Match
 object AppModule {
   
   def bind(binder : ServiceBinder) {
-    binder.bind(classOf[PersonService])
+    binder.bind(classOf[PersonService], classOf[PersonServiceImpl])
   }
-  
+
   def contributeApplicationDefaults(configuration : MappedConfiguration[String, Object]) {
     configuration.add(SymbolConstants.DEFAULT_STYLESHEET, "classpath:/at/priv/koeberl/tapestry/scalademo/style/tapestry.css")
     configuration.add(SymbolConstants.PRODUCTION_MODE, Boolean.box(false))
